@@ -1,0 +1,23 @@
+{
+  "name": "pi-co-author",
+  "version": "0.1.0",
+  "description": "Automatically attribute Pi agent Git commits to the model that made them.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package", "pi-extension", "git", "co-author"],
+  "files": ["extensions", "lib", "README.md", "LICENSE"],
+  "pi": { "extensions": ["./extensions/co-author.ts"] },
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:unit": "node --test test/co-author.test.mjs test/extension.test.mjs test/native-trailers.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test"
+  },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": "*" },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.1.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  }
+}
